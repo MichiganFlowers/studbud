@@ -1,0 +1,24 @@
+{
+  "name": "studbud",
+  "version": "1.0.0",
+  "description": "A useful study tool for students",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichiganFlowers/studbud.git"
+  },
+  "keywords": [
+    "study",
+    "online",
+    "help"
+  ],
+  "author": "Liam Annesley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MichiganFlowers/studbud/issues"
+  },
+  "homepage": "https://github.com/MichiganFlowers/studbud#readme"
+}
