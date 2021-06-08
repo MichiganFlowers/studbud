@@ -1,0 +1,21 @@
+.containertwo{
+  margin-top: 2em;
+  font-family: Letters For Learners, sans-serif;
+  height: 300px;
+  width: 100px;
+  color:  #fff665;;
+  text-align: center;
+  justify-content: center;
+}
+
+#display{
+  width: 100%;
+  font-size: 72px;
+  text-align: center;
+  margin: 0px auto;
+}
+
+.buttons{
+  text-align: center;
+  font-family: Letters For Learners;
+}

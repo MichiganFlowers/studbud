@@ -1,75 +1,67 @@
-var start = document.getElementById('start');
-var stop = document.getElementById('stop');
-var reset = document.getElementById('reset');
-
-var wm = document.getElementById('w_minutes');
-var ws = document.getElementById('w_seconds');
-
-var bm = document.getElementById('b_minutes');
-var bs = document.getElementById('b_seconds');
-
-//store a reference to a timer variable
-var startTimer;
-
-start.addEventListener('click', function(){
-    if(startTimer === undefined){
-        startTimer = setInterval(timer, 1000)
-    } else {
-        alert("Timer is already running");
-    }
-})
-
-reset.addEventListener('click', function(){
-    wm.innerText = 25;
-    ws.innerText = "00";
-
-    bm.innerText = 5;
-    bs.innerText = "00";
-
-    document.getElementById('counter').innerText = 0;
-    stopInterval()
-    startTimer = undefined;
-})
-
-stop.addEventListener('click', function(){
-    stopInterval()
-    startTimer = undefined;
-})
-
-
-//Start Timer Function
-function timer(){
-    //Work Timer Countdown
-    if(ws.innerText != 0){
-        ws.innerText--;
-    } else if(wm.innerText != 0 && ws.innerText == 0){
-        ws.innerText = 59;
-        wm.innerText--;
-    }
-
-    //Break Timer Countdown
-    if(wm.innerText == 0 && ws.innerText == 0){
-        if(bs.innerText != 0){
-            bs.innerText--;
-        } else if(bm.innerText != 0 && bs.innerText == 0){
-            bs.innerText = 59;
-            bm.innerText--;
-        }
-    }
-
-    //Increment Counter by one if one full cycle is completed
-    if(wm.innerText == 0 && ws.innerText == 0 && bm.innerText == 0 && bs.innerText == 0){
-        wm.innerText = 25;
-        ws.innerText = "00";
-
-        bm.innerText = 5;
-        bs.innerText = "00";
-
-        document.getElementById('counter').innerText++;
-    }
+const navigation = document.querySelector('.navigation')
+document.querySelector('.toggle').ondblclick = function () {
+    this.classList.toggle('active')
+    navigation.classList.toggle('active')
 }
 
-//Stop Timer Function
-function stopInterval(){
-    clearInterval(startTimer);
+$(function () {
+    $(".navigation").draggable();
+});
+
+let tabHeader = document.getElementsByClassName("filterUl")[0];
+let tabBody = document.getElementsByClassName("filterMenu")[0];
+
+let tabsPane = tabHeader.getElementsByClassName("list");
+
+for (let i = 0; i < tabsPane.length; i++) {
+    tabsPane[i].addEventListener("click", function () {
+        tabHeader.getElementsByClassName("filterActive")[0].classList.remove("filterActive");
+        tabsPane[i].classList.add("filterActive");
+        tabBody.getElementsByClassName("filterActive")[0].classList.remove("filterActive");
+        tabBody.getElementsByClassName("filterMain")[i].classList.add("filterActive");
+    });
+}
+
+let bgColor = document.querySelector(".studbudAllWrapper");
+let studbudHeader = document.querySelector(".studbudHeader");
+let planningIconHolder = document.querySelector("#planningIconHolder");
+let practiceIconHolder = document.querySelector("#practiceIconHolder");
+let studbudMainSec = document.querySelector(".studbudMainSec");
+let topAllWrapper = document.querySelector(".topAllWrapper");
+function practiceClick(){
+    bgColor.classList.add('studbudAllWrapperActive')
+    studbudHeader.classList.add('studbudHeaderActive')
+    practiceIconHolder.classList.add('studbudIconActive')
+    planningIconHolder.classList.remove('studbudIconActive')
+    window.scrollTo(studbudMainSec)
+    studbudMainSec.classList.add("studbudMainSecActive")
+    topAllWrapper.classList.add("topAllWrapperHidden")
+}
+function planningClick(){
+    bgColor.classList.remove('studbudAllWrapperActive')
+    studbudHeader.classList.remove('studbudHeaderActive')
+    planningIconHolder.classList.add('studbudIconActive')
+    practiceIconHolder.classList.remove('studbudIconActive')
+    window.scrollTo(studbudMainSec)
+    studbudMainSec.classList.add("studbudMainSecActive")
+    topAllWrapper.classList.add("topAllWrapperHidden")
+}
+
+
+let landPlanning = document.querySelector(".leftStart");
+let landPractice = document.querySelector(".rightStart");
+let planningAllWrapper = document.querySelector(".planningAllWrapper")
+let practiceMain = document.querySelector(".practiceMain")
+landPlanning.addEventListener('click', ()=>{
+    planningAllWrapper.classList.add("filterActive");
+    practiceMain.classList.remove("filterActive")
+})
+landPractice.addEventListener('click', ()=> {
+    practiceMain.classList.add("filterActive")
+    planningAllWrapper.classList.remove("filterActive")
+})
+
+
+function studMainDisplay(){
+    
 }
