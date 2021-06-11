@@ -1,0 +1,29 @@
+.grid-container {
+    background-color: #9cc6ff;
+    font-family: 'Letters for Learners', sans-serif;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". Urgent Not-Urgent"
+      "Important Urgent-Important Non-Urgent-Important"
+      "Not-Important Urgent-Not-Important Not-Urgent-Not-Important";
+  }
+  
+  .Urgent { grid-area: Urgent; }
+  
+  .Not-Urgent { grid-area: Not-Urgent; }
+  
+  .Important { grid-area: Important; }
+  
+  .Not-Important { grid-area: Not-Important; }
+  
+  .Urgent-Important { grid-area: Urgent-Important; }
+  
+  .Non-Urgent-Important { grid-area: Non-Urgent-Important; }
+  
+  .Urgent-Not-Important { grid-area: Urgent-Not-Important; }
+  
+  .Not-Urgent-Not-Important { grid-area: Not-Urgent-Not-Important; }

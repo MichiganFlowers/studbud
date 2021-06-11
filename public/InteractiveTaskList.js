@@ -1,7 +1,8 @@
+//Define variables
 const form = document.getElementById("taskform");
 const button = document.querySelector("#taskform > button")
-var taskInput = document.getElementById("taskInput");
-var tasklist = document.getElementById("tasklist");
+var taskInput = document.getElementById("taskInput2");
+let tasklist = document.getElementById("tasklist");
 
 var dueDateInput = document.getElementById("dueDateInput");
 var completionTimeInput = document.getElementById("completionTimeInput");
@@ -16,7 +17,7 @@ form.addEventListener("submit", function(event){
   let estimatedTime = estimatedTimeInput.value;
   let priorityRating = priorityInput.options[priorityInput.selectedIndex].value;
   addTask(task, dueDate, estimatedTime, priorityRating, completionTime, false);
-  console.log(taskList);
+  console.log(tasklist);
 })
 
 var taskListArray = [];

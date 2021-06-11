@@ -9,6 +9,7 @@
      <link href="StopwatchStyle.css" rel="stylesheet" type="text/css" />
      <link href="PomodoroStyle.css" rel="stylesheet" type="text/css" />
      <link href="InteractiveTaskList.css" rel="stylesheet" type="text/css" />
+     <link href="CoveyQuadrant.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -64,8 +65,39 @@
                                 <h1><span>Quadrant</span></h1>
                             </div>
                             <div class="aboutQuadrant">
-                                
+                                    <form id="quadrantForm">
+                                            <div class="grid-container">
+                                            <div class="Urgent">
+                                              <p>Urgent</p>
+                                            </div>
+                                            <div class="Not-Urgent">
+                                              <p>Not Urgent</p>
+                                            </div>
+                                            <div class="Important">
+                                              <p>Important </p>
+                                            </div>
+                                            <div class="Not-Important">
+                                              <p>Not-Important</p>
+                                            </div>
+                                            <div class="Urgent-Important">
+                                                <input type="text" name="urgentImportant" id="urgentImportantInput">
+                                            </div>
+                                            <div class="Non-Urgent-Important">
+                                                <input type="text" name="notUrgentImportant" id="notUrgentImportantInput">
+                                            </div>
+                                            <div class="Urgent-Not-Important">
+                                              <input type="text" name="urgentNotImportant" id="urgentNotImportantInput">
+                                            </div>
+                                            <div class="Not-Urgent-Not-Important">
+                                              <input type="text" name="notUrgentNotImportant" id="notUrgentNotImportantInput">
+                                              <br></div>
+                                              <button type="submit" id="submit-button">Submit:</button>
+                                              </div>
+                                            </form>
+                                            <div id="tasklist2">
+                                              <p id="emptyList2">You have not entered any tasks yet.</p>
                             </div>
+                        </div>
                         </div>
                         <div class="carousel-cell planningListWrapper taskListWrapper">
                             <div class="planningHeader taskListHeader">
@@ -75,7 +107,7 @@
                             <div id="task-grid">
                             <form id="taskform">
                               <label for="task">Task:</label>
-                              <input type="text" name="task" id="taskInput">
+                              <input type="text" name="task" id="taskInput2">
 
 
                               <br>
